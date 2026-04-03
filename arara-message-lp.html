@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAのコスト、メール配信だけに払っていませんか？ | アララ メッセージ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066FF;
+            --primary-dark: #0052CC;
+            --accent: #00D9B8;
+            --accent-light: #E5FFF9;
+            --text-dark: #1A1A2E;
+            --text-gray: #5A5A6F;
+            --text-light: #8B8B9E;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FD;
+            --bg-gradient: linear-gradient(135deg, #F8F9FD 0%, #E8EEFF 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 102, 255, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 102, 255, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 102, 255, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--bg-gradient);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-light);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            animation: slideDown 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: var(--accent);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            animation: slideDown 1s ease-out 0.4s backwards;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: slideDown 1.4s ease-out 0.8s backwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Problem Section */
+        .problems {
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-gray);
+        }
+
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .problem-card {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .problem-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: var(--bg-gradient);
+            text-align: center;
+        }
+
+        .solution-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .solution-logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .solution-tagline {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Cost Comparison Section */
+        .comparison {
+            background: white;
+        }
+
+        .comparison-table {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: var(--bg-gradient);
+            padding: 24px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 24px;
+            border-bottom: 1px solid #E8E8F0;
+            align-items: center;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-row.highlight {
+            background: var(--accent-light);
+        }
+
+        .tool-name {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .tool-name .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .price {
+            font-family: 'Sora', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .price.highlight {
+            color: var(--primary);
+            font-size: 32px;
+        }
+
+        .savings {
+            font-family: 'Sora', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .price-note {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* Migration Section */
+        .migration {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .migration .section-title,
+        .migration .section-subtitle {
+            color: white;
+        }
+
+        .migration-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 32px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            color: var(--text-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        /* Features Detail Section */
+        .features-detail {
+            background: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-card-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        /* Trust Section */
+        .trust {
+            background: white;
+            text-align: center;
+        }
+
+        .trust-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            max-width: 900px;
+            margin: 48px auto 0;
+        }
+
+        .trust-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trust-stat-value {
+            font-family: 'Sora', sans-serif;
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .trust-stat-label {
+            font-size: 16px;
+            color: var(--text-gray);
+        }
+
+        .trust-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 64px;
+            padding: 40px;
+            background: var(--bg-light);
+            border-radius: 16px;
+        }
+
+        .client-logo {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Competitive Advantage Section */
+        .competitive {
+            background: var(--bg-gradient);
+        }
+
+        .comparison-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .comparison-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .comparison-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--bg-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check {
+            color: var(--accent);
+            font-size: 20px;
+        }
+
+        .cross {
+            color: #FFB8B8;
+            font-size: 20px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: white;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 16px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: var(--bg-gradient);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .final-cta-box {
+            background: white;
+            padding: 64px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .comparison-header > div:not(:first-child),
+            .comparison-row > div:not(:first-child) {
+                text-align: left;
+            }
+
+            .final-cta-box {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">
+                    💰 MAツールのコスト削減
+                </span>
+                <h1>
+                    MAの料金、<br>
+                    <span class="highlight">メール配信だけ</span>に<br>
+                    払っていませんか？
+                </h1>
+                <p class="hero-subtitle" style="font-size: 24px; font-weight: 700; margin-bottom: 32px;">
+                    アララ メッセージなら<br>
+                    <span style="color: var(--primary); font-size: 28px;">月額9,500円〜</span>で<br>
+                    <span style="color: var(--primary);">最大80%のコスト削減</span>
+                </p>
+                <p style="font-size: 16px; color: var(--text-gray); margin-bottom: 40px;">
+                    メール配信に必要な機能はすべて標準搭載。<br>
+                    高機能MAツールから乗り換えて、年間最大300万円の削減事例も。
+                </p>
+                <div class="cta-group">
+                    <a href="#" class="btn btn-primary">
+                        無料コスト診断を受ける →
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        資料ダウンロード
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problems section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Problem</span>
+                <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+                <p class="section-subtitle">MAツールを導入したものの、使いこなせていない企業様が増えています</p>
+            </div>
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>高額なMA料金</h3>
+                    <p>Salesforce Marketing CloudやAdobe Campaignで月額数十万〜数百万円。使っているのはメール配信機能だけなのに...</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🤔</div>
+                    <h3>高機能すぎて使いこなせない</h3>
+                    <p>スコアリング、高度なセグメント、AI機能...契約しているのに実際は10%も使っていない状態。</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⚙️</div>
+                    <h3>運用・保守の負担</h3>
+                    <p>複雑な管理画面、頻繁なアップデート対応、専任担当者が必要で人的コストもかさむ。</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3>費用対効果が見えない</h3>
+                    <p>高額な投資をしているのに、メール配信以外の機能の効果が実感できず、ROIが不透明。</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <h3>乗り換えのハードル</h3>
+                    <p>「データ移行が大変そう」「契約期間の縛り」「また新しいツールを覚えるのか...」という不安。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution section">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-logo">アララ メッセージ</div>
+                <h2 class="section-title">メール配信に特化して、<br>圧倒的なコストパフォーマンスを実現</h2>
+                <p class="solution-tagline">
+                    必要な機能はすべて搭載、不要な機能は削ぎ落とす。<br>
+                    だから、<strong>月額9,500円〜</strong>で始められます。
+                </p>
+                <div class="solution-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h4>高速配信</h4>
+                        <p>毎時100万通の処理速度</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <h4>高到達率</h4>
+                        <p>ドメインごとの最適化</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h4>HTMLエディタ</h4>
+                        <p>150種類以上のテンプレート</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h4>効果測定</h4>
+                        <p>開封率・クリック率を可視化</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <h4>ステップメール</h4>
+                        <p>シナリオ配信も標準搭載</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <h4>セキュリティ</h4>
+                        <p>SPF/DKIM対応</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Comparison Section -->
+    <section class="comparison section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Cost Comparison</span>
+                <h2 class="section-title">具体的なコスト比較</h2>
+                <p class="section-subtitle">月間50万通配信の場合の料金比較（仮想試算）</p>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div>サービス名</div>
+                    <div>月額料金</div>
+                    <div>年間削減額</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="tool-name">某MAツールA（海外製）</div>
+                    <div>
+                        <div class="price">¥380,000</div>
+                        <div class="price-note">※スタンダードプラン</div>
+                    </div>
+                    <div class="savings">-</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="tool-name">某MAツールB（国内製）</div>
+                    <div>
+                        <div class="price">¥220,000</div>
+                        <div class="price-note">※プロフェッショナルプラン</div>
+                    </div>
+                    <div class="savings">-</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="tool-name">某MAツールC（中堅向け）</div>
+                    <div>
+                        <div class="price">¥150,000</div>
+                        <div class="price-note">※ビジネスプラン</div>
+                    </div>
+                    <div class="savings">-</div>
+                </div>
+                <div class="comparison-row highlight">
+                    <div class="tool-name">
+                        アララ メッセージ
+                        <span class="badge">おすすめ</span>
+                    </div>
+                    <div>
+                        <div class="price highlight">¥49,500</div>
+                        <div class="price-note">※50万通プラン</div>
+                    </div>
+                    <div>
+                        <div class="savings">最大¥330万/年</div>
+                        <div class="price-note">※ツールAと比較</div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#" class="btn btn-primary">あなたの削減額を無料診断 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Migration Section -->
+    <section class="migration section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" style="color: var(--accent);">Migration Support</span>
+                <h2 class="section-title">乗り換えもスムーズ</h2>
+                <p class="section-subtitle">データ移行から並行運用まで、専任チームが徹底サポート</p>
+            </div>
+            <div class="migration-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>現状分析</h4>
+                    <p>現在のツールの利用状況、配信データ、課題をヒアリング</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>データ移行</h4>
+                    <p>顧客リスト、テンプレート、過去実績をスムーズに移行</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>並行運用</h4>
+                    <p>旧ツールと並行しながら段階的に切り替え可能</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>運用開始</h4>
+                    <p>専任サポートが継続的に伴走、安心の国内体制</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Detail Section -->
+    <section class="features-detail section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Features</span>
+                <h2 class="section-title">メール配信に必要な機能、すべて標準搭載</h2>
+                <p class="section-subtitle">オプション料金なし、この価格ですべてご利用いただけます</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-icon">🎨</div>
+                    <h4>HTMLメールエディタ</h4>
+                    <p>ドラッグ&ドロップで簡単作成。150種類以上のレスポンシブ対応テンプレートから選べます。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🤖</div>
+                    <h4>AI件名提案</h4>
+                    <p>本文から最適な件名を5パターン自動提案。開封率アップに貢献します。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">📊</div>
+                    <h4>効果測定</h4>
+                    <p>開封率、クリック率、コンバージョンをリアルタイムで可視化。グラフで直感的に把握。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🎯</div>
+                    <h4>セグメント配信</h4>
+                    <p>柔軟な条件設定で、ターゲットを絞ったメール配信が可能。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🔄</div>
+                    <h4>ステップメール</h4>
+                    <p>シナリオに沿った自動配信で、顧客育成を効率化。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🔌</div>
+                    <h4>API連携</h4>
+                    <p>豊富なAPIで基幹システムとの連携も簡単。エンジニアの負担を軽減。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">📋</div>
+                    <h4>リスト管理</h4>
+                    <p>エラーアドレス自動除外、CSV一括アップロードで効率的に管理。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🛡️</div>
+                    <h4>迷惑メール対策</h4>
+                    <p>SPF、DKIM、DMARCに標準対応。高い到達率を実現。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">📱</div>
+                    <h4>レスポンシブ対応</h4>
+                    <p>PC、スマホ、タブレット、どのデバイスでも最適表示。</p>
+                    <span class="feature-badge">標準機能</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Trust & Performance</span>
+                <h2 class="section-title">15年以上の実績と信頼</h2>
+                <p class="section-subtitle">大手企業から中堅企業まで、幅広くご利用いただいています</p>
+            </div>
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="trust-stat-value">15+</div>
+                    <div class="trust-stat-label">年の運用実績</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-value">100万</div>
+                    <div class="trust-stat-label">毎時処理通数</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-value">24/365</div>
+                    <div class="trust-stat-label">監視体制</div>
+                </div>
+            </div>
+            <div class="trust-logos">
+                <div class="client-logo">ワークマン様</div>
+                <div class="client-logo">東京海上日動火災保険様</div>
+                <div class="client-logo">アソビュー様</div>
+                <div class="client-logo">その他多数の企業様</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Advantage Section -->
+    <section class="competitive section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-title">他の低価格ツールとの違い</h2>
+                <p class="section-subtitle">安さだけじゃない。品質・サポート・実績で選ばれています</p>
+            </div>
+            <div class="comparison-cards">
+                <div class="comparison-card">
+                    <h4>
+                        <span style="font-size: 24px;">✅</span>
+                        アララ メッセージ
+                    </h4>
+                    <ul class="comparison-list">
+                        <li><span class="check">✓</span> 国内開発・自社サポート</li>
+                        <li><span class="check">✓</span> 15年以上の運用実績</li>
+                        <li><span class="check">✓</span> 毎時100万通の処理能力</li>
+                        <li><span class="check">✓</span> ドメインごとの最適化</li>
+                        <li><span class="check">✓</span> 24時間365日監視体制</li>
+                        <li><span class="check">✓</span> 大手企業の導入実績</li>
+                        <li><span class="check">✓</span> SPF/DKIM/DMARC完全対応</li>
+                        <li><span class="check">✓</span> 専任サポート担当</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>
+                        <span style="font-size: 24px;">❌</span>
+                        他社低価格ツール
+                    </h4>
+                    <ul class="comparison-list">
+                        <li><span class="cross">✗</span> 海外サービス（日本語不十分）</li>
+                        <li><span class="cross">✗</span> サポートは英語またはチャットのみ</li>
+                        <li><span class="cross">✗</span> 配信速度に制限あり</li>
+                        <li><span class="cross">✗</span> 到達率の最適化なし</li>
+                        <li><span class="cross">✗</span> 障害時の対応が遅い</li>
+                        <li><span class="cross">✗</span> 実績・信頼性が不透明</li>
+                        <li><span class="cross">✗</span> セキュリティ設定は自己責任</li>
+                        <li><span class="cross">✗</span> マニュアルのみの対応</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">よくあるご質問</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Q. 現在のMAツールから本当にスムーズに移行できますか？
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        A. はい、専任チームがデータ移行を全面サポートします。顧客リスト、配信テンプレート、過去の実績データなど、必要なデータをすべて移行可能です。また、旧ツールと並行運用しながら段階的に切り替えることもできます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Q. 安いと到達率が下がりませんか？
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        A. アララ メッセージは15年以上の実績があり、送信先ドメインごとに最適なチューニングを自動実施。SPF/DKIM/DMARCにも完全対応しており、高い到達率を実現しています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Q. サポート体制はどうなっていますか？
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        A. 国内の専任カスタマーサポートデスクがメールで迅速・丁寧に対応します。24時間365日のシステム監視体制で、万が一の障害時も即座に対応いたします。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Q. 契約期間の縛りはありますか？
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        A. 1ヶ月単位での契約が可能です。長期契約の縛りはありません。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Q. APIでの連携は可能ですか？
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        A. はい、豊富なAPIを標準提供しており、基幹システムとの連携も簡単に実現できます。エンジニア向けのドキュメントも充実しています。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-box">
+                <h2>まずは無料で、あなたのコスト削減額を診断</h2>
+                <p>現在のMAツールとメール配信状況を教えていただければ、<br>年間どれくらいコスト削減できるか、無料で診断いたします。</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="#" class="btn btn-primary" style="font-size: 18px; padding: 20px 40px;">
+                        無料コスト診断を受ける →
+                    </a>
+                </div>
+                <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--bg-light);">
+                    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">その他のお問い合わせ</p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="#" class="btn btn-secondary">資料ダウンロード</a>
+                        <a href="#" class="btn btn-secondary">お問い合わせ</a>
+                        <a href="tel:03-5414-3611" class="btn btn-secondary">📞 03-5414-3611</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-card, .feature-card, .comparison-card, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // FAQ toggle (simple example)
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+            });
+            // Initially hide answers
+            item.querySelector('.faq-answer').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
